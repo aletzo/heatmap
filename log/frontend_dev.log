@@ -1,0 +1,44 @@
+Sep 12 23:25:32 symfony [info] {sfPatternRouting} Match route "click" (/click/*) for /click with parameters array (  'module' => 'site',  'action' => 'click',)
+Sep 12 23:25:32 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 12 23:25:32 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 12 23:25:32 symfony [info] {siteActions} Call "siteActions->executeClick()"
+Sep 12 23:25:32 symfony [info] {siteActions} Change layout to ""
+Sep 12 23:25:32 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 12 23:25:32 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO click (site_id) VALUES (?) - (1)
+Sep 12 23:25:32 symfony [err] {Doctrine_Connection_Mysql_Exception} SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`heatmap`.`click`, CONSTRAINT `click_site_id_site_id` FOREIGN KEY (`site_id`) REFERENCES `site` (`id`) ON DELETE CASCADE)
+Sep 12 23:25:32 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Sep 12 23:25:32 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 12 23:25:32 symfony [info] {sfWebDebugLogger} Configuration 77.44 ms (8)
+Sep 12 23:25:32 symfony [info] {sfWebDebugLogger} Factories 100.25 ms (1)
+Sep 12 23:25:32 symfony [info] {sfWebDebugLogger} Action "site/click" 81.92 ms (1)
+Sep 12 23:25:32 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.00 ms (1)
+Sep 12 23:27:09 symfony [info] {sfPatternRouting} Match route "click" (/click/*) for /click with parameters array (  'module' => 'site',  'action' => 'click',)
+Sep 12 23:27:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 12 23:27:09 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 12 23:27:09 symfony [info] {siteActions} Call "siteActions->executeClick()"
+Sep 12 23:27:09 symfony [info] {siteActions} Change layout to ""
+Sep 12 23:27:10 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 12 23:27:10 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO click (site_id) VALUES (?) - (1)
+Sep 12 23:27:10 symfony [err] {sfRenderException} The template "clickSuccess.php" does not exist or is unreadable in "".
+Sep 12 23:27:10 symfony [info] {sfWebResponse} Send status "HTTP/1.1 500 Internal Server Error"
+Sep 12 23:27:10 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 12 23:27:10 symfony [info] {sfWebDebugLogger} Configuration 36.65 ms (10)
+Sep 12 23:27:10 symfony [info] {sfWebDebugLogger} Factories 31.21 ms (1)
+Sep 12 23:27:10 symfony [info] {sfWebDebugLogger} Action "site/click" 23.93 ms (1)
+Sep 12 23:27:10 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (2)
+Sep 12 23:27:10 symfony [info] {sfWebDebugLogger} View "Success" for "site/click" 23.96 ms (1)
+Sep 12 23:37:49 symfony [info] {sfPatternRouting} Match route "click" (/click/*) for /click with parameters array (  'module' => 'site',  'action' => 'click',)
+Sep 12 23:37:49 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Sep 12 23:37:49 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Sep 12 23:37:49 symfony [info] {siteActions} Call "siteActions->executeClick()"
+Sep 12 23:37:49 symfony [info] {siteActions} Change layout to ""
+Sep 12 23:37:49 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'UTF8' - ()
+Sep 12 23:37:49 symfony [info] {Doctrine_Connection_Statement} execute : INSERT INTO click (site_id) VALUES (?) - (1)
+Sep 12 23:37:49 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Sep 12 23:37:49 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Sep 12 23:37:49 symfony [info] {sfWebDebugLogger} Configuration 0.94 ms (8)
+Sep 12 23:37:49 symfony [info] {sfWebDebugLogger} Factories 31.41 ms (1)
+Sep 12 23:37:49 symfony [info] {sfWebDebugLogger} Action "site/click" 41.58 ms (1)
+Sep 12 23:37:49 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.00 ms (2)
+Sep 12 23:37:49 symfony [info] {sfWebDebugLogger} View "None" for "site/click" 0.01 ms (1)
+Sep 12 23:37:49 symfony [info] {sfWebResponse} Send content (18633 o)

@@ -1,0 +1,25 @@
+Site:
+  actAs:
+    Timestampable: ~
+  columns:
+    name: string(100)
+    url: string(100)
+    code: string(100)
+    
+Click:
+  actAs:
+    Timestampable: ~
+  columns:
+    site_id: { type: integer, notnull: true }
+    referer: string(100)
+    uri: string(200)
+    height: integer(2)
+    width: integer(2)
+    avail_height: integer(2)
+    avail_width: integer(2)
+    inner_height: integer(2)
+    inner_width: integer(2)
+    x: integer(2)
+    y: integer(2)
+  relations:
+    Site:       { foreignAlias: Clicks, onDelete: CASCADE }  
