@@ -14,7 +14,7 @@ abstract class BaseClickFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'site_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Site'), 'add_empty' => true)),
-      'referer'      => new sfWidgetFormFilterInput(),
+      'url_id'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'uri'          => new sfWidgetFormFilterInput(),
       'height'       => new sfWidgetFormFilterInput(),
       'width'        => new sfWidgetFormFilterInput(),
@@ -30,7 +30,7 @@ abstract class BaseClickFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'site_id'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Site'), 'column' => 'id')),
-      'referer'      => new sfValidatorPass(array('required' => false)),
+      'url_id'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'uri'          => new sfValidatorPass(array('required' => false)),
       'height'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'width'        => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -63,7 +63,7 @@ abstract class BaseClickFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'           => 'Number',
       'site_id'      => 'ForeignKey',
-      'referer'      => 'Text',
+      'url_id'       => 'Number',
       'uri'          => 'Text',
       'height'       => 'Number',
       'width'        => 'Number',

@@ -3,15 +3,22 @@ Site:
     Timestampable: ~
   columns:
     name: string(100)
-    url: string(100)
+    host: string(100)
     code: string(100)
+    
+Url:
+  actAs:
+    Timestampable: ~
+  columns:
+    site_id: { type: integer, notnull: true }
+    url: string(200)
     
 Click:
   actAs:
     Timestampable: ~
   columns:
     site_id: { type: integer, notnull: true }
-    referer: string(100)
+    url_id: { type: integer, notnull: true }
     uri: string(200)
     height: integer(2)
     width: integer(2)

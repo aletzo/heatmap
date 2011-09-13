@@ -17,7 +17,7 @@ abstract class BaseClickForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'           => new sfWidgetFormInputHidden(),
       'site_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Site'), 'add_empty' => false)),
-      'referer'      => new sfWidgetFormInputText(),
+      'url_id'       => new sfWidgetFormInputText(),
       'uri'          => new sfWidgetFormInputText(),
       'height'       => new sfWidgetFormInputText(),
       'width'        => new sfWidgetFormInputText(),
@@ -34,7 +34,7 @@ abstract class BaseClickForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'site_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Site'))),
-      'referer'      => new sfValidatorString(array('max_length' => 100, 'required' => false)),
+      'url_id'       => new sfValidatorInteger(),
       'uri'          => new sfValidatorString(array('max_length' => 200, 'required' => false)),
       'height'       => new sfValidatorInteger(array('required' => false)),
       'width'        => new sfValidatorInteger(array('required' => false)),

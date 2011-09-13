@@ -20,5 +20,5 @@
 Site:
   Site_1:
     name: 'test site'
-    url: 'http://mydevnull.net'
+    host: 'ajo.fsl.gr'
     code: 'HM-231-232-12'

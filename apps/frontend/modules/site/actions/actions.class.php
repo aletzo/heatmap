@@ -15,9 +15,28 @@ class siteActions extends sfActions
     {
         $this->setLayout(false);
         
+        $referer = $request->getReferer();
+        
+        $urlArray = parse_url($referer);
+        
+        $site = SiteTable::getInstance()->findOnebyHost($urlArray['host']);
+        
+        if ( ! $site) { //invalid site
+            return sfView::NONE;
+        }
+        
+        $url = UrlTable::getInstance()->findOnebyUrl($referer);
+        
+        if ( ! $url) {
+            $url = new Url();
+            $url->url = $referer;
+            $url->site_id = $site->id;
+            $url->save();
+        }
+        
         $click = new Click();
-        $click->site_id = 1;
-        $click->referer = $request->getReferer();
+        $click->site_id = $site->id;
+        $click->url_id = $url->id;
         $click->uri = $request->getUri();
         $click->x = $request->getParameter('x');
         $click->y = $request->getParameter('y');
